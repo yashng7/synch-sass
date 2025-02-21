@@ -2,7 +2,7 @@ import Link from "next/link"
 import { MaxWidthWrapper } from "./max-width-wrapper"
 import { SignOutButton } from "@clerk/nextjs"
 import { Button, buttonVariants } from "./ui/button"
-import { ArrowRight } from "lucide-react"
+import { ArrowRight, Github } from "lucide-react"
 import { currentUser } from "@clerk/nextjs/server"
 import { ModeToggle } from "./mode-toggle"
 
@@ -64,13 +64,19 @@ export const Navbar = async () => {
                   href="/sign-up"
                   className={buttonVariants({
                     size: "sm",
-                    className: "flex items-center gap-1.5 dark:text-gray-100 text-white",
+                    className:
+                      "flex items-center gap-1.5 dark:text-gray-100 text-white",
                   })}
                 >
                   Sign up <ArrowRight className="size-4" />
                 </Link>
               </>
             )}
+            <Button size="icon" variant="outline">
+              <Link href="https://github.com/yashng7/synch-sass.git" target="blank">
+              <Github className="w-4 h-4 dark:text-brand-100" />
+              </Link>
+            </Button>
             <ModeToggle />
           </div>
         </div>
